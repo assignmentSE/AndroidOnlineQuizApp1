@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.mixasian.androidonlinequizapp.Common.Common;
 import com.mixasian.androidonlinequizapp.Model.User;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                         User login = dataSnapshot.child(user).getValue(User.class);
                         if(login.getPassword().equals(pwd)){
                             Intent homeActivity = new Intent(MainActivity.this,Home.class);
+                            Common.currentUser = login;
                             startActivity(homeActivity);
                             finish();
                         }
@@ -120,10 +122,10 @@ public class MainActivity extends AppCompatActivity {
                 users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.child(user.getUsername()).exists())
+                        if(dataSnapshot.child(user.getUserName()).exists())
                             Toast.makeText(MainActivity.this, "User Already Exist", Toast.LENGTH_SHORT).show();
                         else{
-                            users.child(user.getUsername()).setValue(user);
+                            users.child(user.getUserName()).setValue(user);
                             Toast.makeText(MainActivity.this, "User Registration Success", Toast.LENGTH_SHORT).show();
                         }
 

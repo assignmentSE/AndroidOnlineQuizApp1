@@ -9,6 +9,12 @@
         android:icon="@drawable/ic_question_answer_black_24dp"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/action_tutorial"
+        android:enabled="true"
+        android:title="Tutorial"
+        android:icon="@drawable/ic_announcement_black_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/action_ranking"
         android:enabled="true"
         android:title="Ranking"

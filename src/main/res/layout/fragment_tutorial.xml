@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mixasian.androidonlinequizapp.RankingFragment"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="How to Play"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\n1. Look the Picture \n2. Choose the answer base on the Picture\n3. Play until you see your score"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        />
+
+</LinearLayout>

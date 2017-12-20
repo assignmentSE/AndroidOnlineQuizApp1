@@ -5,25 +5,25 @@ package com.mixasian.androidonlinequizapp.Model;
  */
 
 public class User {
-    private String username;
+    private String userName;
     private String password;
     private String email;
 
     public User() {
     }
 
-    public User(String username, String password, String email) {
-        this.username = username;
+    public User(String userName, String password, String email) {
+        this.userName = userName;
         this.password = password;
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {

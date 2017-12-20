@@ -1,7 +1,6 @@
 package com.mixasian.androidonlinequizapp;
 
-import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,11 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mixasian.androidonlinequizapp.Common.Common;
 import com.mixasian.androidonlinequizapp.Interface.ItemClickListener;
 import com.mixasian.androidonlinequizapp.Model.Category;
 import com.mixasian.androidonlinequizapp.VIewHolder.CategoryViewHolder;
@@ -79,7 +78,10 @@ public class CategoryFragment extends Fragment {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(getActivity(), String.format("%s|%s",adapter.getRef(position).getKey(),model.getName()), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), String.format("%s|%s",adapter.getRef(position).getKey(),model.getName()), Toast.LENGTH_SHORT).show();
+                        Intent startGame = new Intent(getActivity(),Start.class);
+                        Common.categoryId = adapter.getRef(position).getKey();
+                        startActivity(startGame);
                     }
                 });
 
@@ -88,5 +90,11 @@ public class CategoryFragment extends Fragment {
         adapter.notifyDataSetChanged();
         listCategory.setAdapter(adapter);
     }
-    
+
+    /**
+     * Created by tommy on 12/20/17.
+     */
+
+    public static class TutorialFragment extends Fragment {
+    }
 }

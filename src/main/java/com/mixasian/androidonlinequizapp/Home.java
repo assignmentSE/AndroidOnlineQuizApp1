@@ -30,6 +30,9 @@ public class Home extends AppCompatActivity {
                     case R.id.action_ranking:
                         selectedFragment = RankingFragment.newInstance();
                         break;
+                    case R.id.action_tutorial:
+                        selectedFragment = TutorialFragment.newInstance();
+                        break;
                 }
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_layout,selectedFragment);
